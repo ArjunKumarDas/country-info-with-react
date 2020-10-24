@@ -3,17 +3,23 @@ import './Country.css';
 import { Col, Container, Row } from 'react-bootstrap';
 
 const Country = (props) => {
-    console.log(props);
+    // console.log(props);
     // props use and detruture
-const {name, flag } = props.country;
+const {name, flag, population, currency } = props.country;
 // console.log(props.Country);
     return (
         <>
-            <Row className="diplay-col">
-                <Col> 
-                 <p><img className="flag-size" src={flag} alt=""/></p>
-                 <p className="bg-primary">{name}</p>
+        {/* <p>{country.length}</p> */}
+            <Row className="display-col m-2">
+               <div className="border pt-1">
+               <Col md={6}> 
+                   <p><img className="flag-size" src={flag} alt=""/></p>
+                   <p>{name}</p>
+                   <p>{population}</p>
+                   <button
+                    className="btn btn-primary">Add</button>
                 </Col>
+               </div>
             </Row>
         </>
     );
